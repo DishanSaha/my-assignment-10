@@ -70,6 +70,9 @@ export default function Navbar() {
                         </label>
                     </div>
                     <div>
+                        <img src="src/assets/userss.png" className="size-8 rounded-full" alt="" />
+                    </div>
+                    <div>
                         <Link to='/login' className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
                     </div>
                 </div>
