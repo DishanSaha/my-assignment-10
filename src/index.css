@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+  font-family: "Momo Trust Display", sans-serif;
+}
