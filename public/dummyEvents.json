@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "title": "Road Cleaning in Mirpur 10, Dhaka",
+        "description": "Join our community clean-up drive to make Mirpur 10 cleaner and greener.",
+        "type": "Cleanup",
+        "thumbnail": "https://i.ibb.co/2Wbb7pH/road-cleanup.jpg",
+        "location": "Mirpur 10, Dhaka",
+        "date": "2025-11-15"
+    },
+    {
+        "id": 2,
+        "title": "Tree Plantation - Hossainpur, Kishoreganj",
+        "description": "Plant trees to restore nature and protect our environment.",
+        "type": "Plantation",
+        "thumbnail": "https://i.ibb.co/x6M3Csf/treeplant.jpg",
+        "location": "Hossainpur, Kishoreganj",
+        "date": "2025-11-20"
+    },
+    {
+        "id": 3,
+        "title": "Blood Donation Camp - Uttara",
+        "description": "Donate blood, save lives. Participate in our local blood donation campaign.",
+        "type": "Donation",
+        "thumbnail": "https://i.ibb.co/2n3JL8X/blood-donation.jpg",
+        "location": "Uttara, Dhaka",
+        "date": "2025-11-25"
+    },
+    {
+        "id": 4,
+        "title": "Beach Cleanup - Cox’s Bazar",
+        "description": "Help us clean the beautiful beach and protect marine life.",
+        "type": "Cleanup",
+        "thumbnail": "https://i.ibb.co/4TbfJp7/beach-cleanup.jpg",
+        "location": "Cox’s Bazar, Chittagong",
+        "date": "2025-11-27"
+    },
+    {
+        "id": 5,
+        "title": "Winter Clothes Donation - Rajshahi",
+        "description": "Distribute warm clothes to underprivileged people during winter.",
+        "type": "Donation",
+        "thumbnail": "https://i.ibb.co/fvfnNFX/clothes-donation.jpg",
+        "location": "Rajshahi City",
+        "date": "2025-12-02"
+    },
+    {
+        "id": 6,
+        "title": "Park Beautification - Dhanmondi Lake",
+        "description": "Join us to clean, paint benches, and decorate Dhanmondi Lake Park.",
+        "type": "Cleanup",
+        "thumbnail": "https://i.ibb.co/Zz9g7tP/park-beautify.jpg",
+        "location": "Dhanmondi, Dhaka",
+        "date": "2025-12-05"
+    },
+    {
+        "id": 7,
+        "title": "Tree Planting - Khulna University Area",
+        "description": "Volunteer for our tree plantation drive near Khulna University.",
+        "type": "Plantation",
+        "thumbnail": "https://i.ibb.co/F8Lb9b5/plantation-event.jpg",
+        "location": "Khulna University, Khulna",
+        "date": "2025-12-07"
+    },
+    {
+        "id": 8,
+        "title": "Community Education Program - Gazipur",
+        "description": "Teach and inspire local children with basic education and awareness.",
+        "type": "Education",
+        "thumbnail": "https://i.ibb.co/7yBvLkH/education.jpg",
+        "location": "Gazipur, Dhaka",
+        "date": "2025-12-10"
+    },
+    {
+        "id": 9,
+        "title": "Plastic-Free Market Campaign - Narayanganj",
+        "description": "Encourage shopkeepers and buyers to use eco-friendly bags.",
+        "type": "Awareness",
+        "thumbnail": "https://i.ibb.co/zPDKYqt/plastic-free.jpg",
+        "location": "Narayanganj City",
+        "date": "2025-12-12"
+    },
+    {
+        "id": 10,
+        "title": "Food Distribution - Sylhet",
+        "description": "Help distribute food to homeless and needy people in Sylhet.",
+        "type": "Donation",
+        "thumbnail": "https://i.ibb.co/hZsTtWZ/food-donation.jpg",
+        "location": "Sylhet City",
+        "date": "2025-12-15"
+    },
+    {
+        "id": 11,
+        "title": "Village Cleanliness Day - Rangpur",
+        "description": "A community effort to clean and beautify our local village area.",
+        "type": "Cleanup",
+        "thumbnail": "https://i.ibb.co/bXrbkbJ/village-clean.jpg",
+        "location": "Rangpur",
+        "date": "2025-12-18"
+    },
+    {
+        "id": 12,
+        "title": "Riverbank Tree Plantation - Barisal",
+        "description": "Join our riverbank plantation to prevent erosion and protect nature.",
+        "type": "Plantation",
+        "thumbnail": "https://i.ibb.co/S6VxPhP/river-plantation.jpg",
+        "location": "Barisal City",
+        "date": "2025-12-20"
+    },
+    {
+        "id": 13,
+        "title": "Old Age Home Visit - Dhaka",
+        "description": "Spend time with elders, share joy and gifts this winter season.",
+        "type": "Social Visit",
+        "thumbnail": "https://i.ibb.co/znx6L9k/old-age-visit.jpg",
+        "location": "Mohammadpur, Dhaka",
+        "date": "2025-12-22"
+    },
+    {
+        "id": 14,
+        "title": "Clean Water Awareness - Mymensingh",
+        "description": "Promote awareness about clean drinking water and hygiene.",
+        "type": "Awareness",
+        "thumbnail": "https://i.ibb.co/yNSRHcf/water-awareness.jpg",
+        "location": "Mymensingh City",
+        "date": "2025-12-24"
+    },
+    {
+        "id": 15,
+        "title": "Community Health Camp - Chattogram",
+        "description": "Volunteer with doctors to provide free medical checkups.",
+        "type": "Health",
+        "thumbnail": "https://i.ibb.co/5LdztZt/health-camp.jpg",
+        "location": "Chattogram City",
+        "date": "2025-12-26"
+    },
+    {
+        "id": 16,
+        "title": "Youth Awareness Seminar - Bogura",
+        "description": "Motivate youth to take part in social development activities.",
+        "type": "Awareness",
+        "thumbnail": "https://i.ibb.co/V2M6N4Z/youth-awareness.jpg",
+        "location": "Bogura City",
+        "date": "2025-12-28"
+    }
+]
