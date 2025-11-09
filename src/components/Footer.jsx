@@ -91,7 +91,7 @@ function Footer() {
 
       </div>
       <div className=" bg-white  pt-4 text-center text-sm text-gray-700 py-6 px-4 sm:px-6 lg:px-16">
-        2025 &copy; Sebajatra Foundation | Developed By Sebajatra Limited
+        2025 &copy; Sebajatra Foundation | Developed By <span className="text-[#0fa47d]">Sebajatra Limited</span>
       </div>
     </footer>
   );
