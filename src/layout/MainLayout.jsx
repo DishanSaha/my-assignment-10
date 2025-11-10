@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Home from '../pages/Home'
@@ -9,7 +10,7 @@ export default function MainLayout() {
         <Navbar />
       </header>
       <main>
-        <Home />
+        <Outlet />
       </main>
       <footer>
         <Footer />

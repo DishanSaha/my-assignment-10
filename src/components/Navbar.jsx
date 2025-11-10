@@ -35,7 +35,7 @@ export default function Navbar() {
                         {links}
                     </ul>
                 </div>
-                <a className=" lg:text-2xl text-lg font-bold">Sebajatra</a>
+                <a className=" lg:text-2xl text-lg font-bold text-green-900">Sebajatra</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -70,7 +70,7 @@ export default function Navbar() {
                     </label>
                 </div>
                 <div>
-                    <img src="src/assets/userss.png" className="size-8 rounded-full" alt="" />
+                    <img src="https://i.ibb.co.com/TF7Qx7N/userss.png" className="size-8 rounded-full" alt="" />
                 </div>
                 <div>
                     <Link to="/auth/login" className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>

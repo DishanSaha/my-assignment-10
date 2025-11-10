@@ -3,13 +3,13 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import UpcomingEvents from "../pages/UpcomingEvents";
 import CreateEvent from "../pages/CreateEvent";
 import EventDetails from "../pages/EventDetails";
 import JoinedEvents from "../pages/JoinedEvents";
 import ManageEvents from "../pages/ManageEvents";
 import PrivateRoute from "./PrivateRoute";
 import AuthLayout from "../layout/AuthLayout";
+import UpEvents from "../pages/UpEvents";
 
 
 const router = createBrowserRouter([
@@ -24,7 +24,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/upcoming-events",
-        element: <UpcomingEvents />,
+        loader: () => fetch("/public/dummyEvents.json"),
+        element: <UpEvents />,
+      },
+      {
+        path: "/events/:id",
+        loader: () => fetch("/public/dummyEvents.json"),
+        element: <EventDetails />
       },
       {
         path: "/create-event",
@@ -33,10 +39,7 @@ const router = createBrowserRouter([
             <CreateEvent />
           </PrivateRoute>
       },
-      {
-        path: "/event/:id",
-        element: <EventDetails />,
-      },
+
       {
         path: "/joined-events",
         element:

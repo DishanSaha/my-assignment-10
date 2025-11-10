@@ -4,7 +4,7 @@
         "title": "Road Cleaning in Mirpur 10, Dhaka",
         "description": "Join our community clean-up drive to make Mirpur 10 cleaner and greener.",
         "type": "Cleanup",
-        "thumbnail": "https://i.ibb.co/2Wbb7pH/road-cleanup.jpg",
+        "image": "https://i.ibb.co.com/DPWQ22rR/cleaning-work-of-mirpurs-paris-canal-by-bd-clean-volunteers-v0-s37npzoce6gc1.jpg",
         "location": "Mirpur 10, Dhaka",
         "date": "2025-11-15"
     },
@@ -13,7 +13,7 @@
         "title": "Tree Plantation - Hossainpur, Kishoreganj",
         "description": "Plant trees to restore nature and protect our environment.",
         "type": "Plantation",
-        "thumbnail": "https://i.ibb.co/x6M3Csf/treeplant.jpg",
+        "image": "https://i.ibb.co.com/3y7ym57K/64a21da62ed1a470611289.jpg",
         "location": "Hossainpur, Kishoreganj",
         "date": "2025-11-20"
     },
@@ -22,17 +22,17 @@
         "title": "Blood Donation Camp - Uttara",
         "description": "Donate blood, save lives. Participate in our local blood donation campaign.",
         "type": "Donation",
-        "thumbnail": "https://i.ibb.co/2n3JL8X/blood-donation.jpg",
+        "image": "https://i.ibb.co.com/wbvzQ57/BTF-4-1024x576.jpg",
         "location": "Uttara, Dhaka",
         "date": "2025-11-25"
     },
     {
         "id": 4,
-        "title": "Beach Cleanup - Cox’s Bazar",
+        "title": "Beach Cleanup - Cox's Bazar",
         "description": "Help us clean the beautiful beach and protect marine life.",
         "type": "Cleanup",
-        "thumbnail": "https://i.ibb.co/4TbfJp7/beach-cleanup.jpg",
-        "location": "Cox’s Bazar, Chittagong",
+        "image": "https://i.ibb.co.com/gZRfFnKf/coca-cola-41d07af249c74265f76d192790b775eb.jpg",
+        "location": "Cox's Bazar, Chittagong",
         "date": "2025-11-27"
     },
     {
@@ -40,7 +40,7 @@
         "title": "Winter Clothes Donation - Rajshahi",
         "description": "Distribute warm clothes to underprivileged people during winter.",
         "type": "Donation",
-        "thumbnail": "https://i.ibb.co/fvfnNFX/clothes-donation.jpg",
+        "image": "https://i.ibb.co.com/SWKbC2Y/30-1024x768.jpg",
         "location": "Rajshahi City",
         "date": "2025-12-02"
     },
@@ -49,7 +49,7 @@
         "title": "Park Beautification - Dhanmondi Lake",
         "description": "Join us to clean, paint benches, and decorate Dhanmondi Lake Park.",
         "type": "Cleanup",
-        "thumbnail": "https://i.ibb.co/Zz9g7tP/park-beautify.jpg",
+        "image": "https://i.ibb.co.com/2454BhJ/Dhanmondi-Lake-02.jpg",
         "location": "Dhanmondi, Dhaka",
         "date": "2025-12-05"
     },
@@ -58,7 +58,7 @@
         "title": "Tree Planting - Khulna University Area",
         "description": "Volunteer for our tree plantation drive near Khulna University.",
         "type": "Plantation",
-        "thumbnail": "https://i.ibb.co/F8Lb9b5/plantation-event.jpg",
+        "image": "https://i.ibb.co.com/kgWWbd8V/ob-1725988290.jpg",
         "location": "Khulna University, Khulna",
         "date": "2025-12-07"
     },
@@ -67,7 +67,7 @@
         "title": "Community Education Program - Gazipur",
         "description": "Teach and inspire local children with basic education and awareness.",
         "type": "Education",
-        "thumbnail": "https://i.ibb.co/7yBvLkH/education.jpg",
+        "image": "https://i.ibb.co.com/zTBT1wqz/65ba207226e572898c49b54e-admin-ajax-3.jpg",
         "location": "Gazipur, Dhaka",
         "date": "2025-12-10"
     },
@@ -76,7 +76,7 @@
         "title": "Plastic-Free Market Campaign - Narayanganj",
         "description": "Encourage shopkeepers and buyers to use eco-friendly bags.",
         "type": "Awareness",
-        "thumbnail": "https://i.ibb.co/zPDKYqt/plastic-free.jpg",
+        "image": "https://i.ibb.co.com/MkG0PB4f/single-use-plastic-use-on-the-rise-1619026837203.webp",
         "location": "Narayanganj City",
         "date": "2025-12-12"
     },
@@ -85,7 +85,7 @@
         "title": "Food Distribution - Sylhet",
         "description": "Help distribute food to homeless and needy people in Sylhet.",
         "type": "Donation",
-        "thumbnail": "https://i.ibb.co/hZsTtWZ/food-donation.jpg",
+        "image": "https://i.ibb.co.com/pvvsYcS2/food-distribution-by-YPSA-in-Sylhet.jpg",
         "location": "Sylhet City",
         "date": "2025-12-15"
     },
@@ -94,7 +94,7 @@
         "title": "Village Cleanliness Day - Rangpur",
         "description": "A community effort to clean and beautify our local village area.",
         "type": "Cleanup",
-        "thumbnail": "https://i.ibb.co/bXrbkbJ/village-clean.jpg",
+        "image": "https://i.ibb.co.com/jZhsyBWh/1762538273-630e425ea9d4e8018ee74d6d114d4b93.jpg",
         "location": "Rangpur",
         "date": "2025-12-18"
     },
@@ -103,7 +103,7 @@
         "title": "Riverbank Tree Plantation - Barisal",
         "description": "Join our riverbank plantation to prevent erosion and protect nature.",
         "type": "Plantation",
-        "thumbnail": "https://i.ibb.co/S6VxPhP/river-plantation.jpg",
+        "image": "https://i.ibb.co.com/XxLNfrfm/images.jpg",
         "location": "Barisal City",
         "date": "2025-12-20"
     },
@@ -112,7 +112,7 @@
         "title": "Old Age Home Visit - Dhaka",
         "description": "Spend time with elders, share joy and gifts this winter season.",
         "type": "Social Visit",
-        "thumbnail": "https://i.ibb.co/znx6L9k/old-age-visit.jpg",
+        "image": "https://i.ibb.co.com/PGBcXpwc/Old-Age-Home-Featured.webp",
         "location": "Mohammadpur, Dhaka",
         "date": "2025-12-22"
     },
@@ -121,7 +121,7 @@
         "title": "Clean Water Awareness - Mymensingh",
         "description": "Promote awareness about clean drinking water and hygiene.",
         "type": "Awareness",
-        "thumbnail": "https://i.ibb.co/yNSRHcf/water-awareness.jpg",
+        "image": "https://i.ibb.co.com/sdnV0Msq/joshua-lanzarini-JQwz-Kc-HLHoc-unsplash-scaled-1-1024x683.jpg",
         "location": "Mymensingh City",
         "date": "2025-12-24"
     },
@@ -130,7 +130,7 @@
         "title": "Community Health Camp - Chattogram",
         "description": "Volunteer with doctors to provide free medical checkups.",
         "type": "Health",
-        "thumbnail": "https://i.ibb.co/5LdztZt/health-camp.jpg",
+        "image": "https://i.ibb.co.com/ycPcTx34/2024011811101490784907-IMG-3728.jpg",
         "location": "Chattogram City",
         "date": "2025-12-26"
     },
@@ -139,7 +139,7 @@
         "title": "Youth Awareness Seminar - Bogura",
         "description": "Motivate youth to take part in social development activities.",
         "type": "Awareness",
-        "thumbnail": "https://i.ibb.co/V2M6N4Z/youth-awareness.jpg",
+        "image": "https://i.ibb.co.com/m7GN5yc/Seminar-On-Awareness-and-Prevention-of-Sexual-Harassment.jpg",
         "location": "Bogura City",
         "date": "2025-12-28"
     }

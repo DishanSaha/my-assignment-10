@@ -46,7 +46,7 @@ export default function Register() {
           </div>
           <button
             type="submit"
-            className="w-full bg-[#0fa47d] text-white py-2 rounded font-semibold"
+            className="w-full bg-[#0fa47d] text-white py-2 rounded font-medium hover:bg-[#09634b]"
           >
             Register
           </button>
