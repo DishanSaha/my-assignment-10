@@ -1,7 +1,8 @@
-import { useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 import { format } from "date-fns";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+
 
 export default function EventDetails() {
 
@@ -24,6 +25,8 @@ export default function EventDetails() {
   }, []);
 
 
+
+
   return (
     <div ref={containerRef} className="max-w-4xl mt-20 mb-8 shadow-lg mx-auto bg-base-200 py-10 px-6 sm:px-4">
       <img
@@ -42,9 +45,9 @@ export default function EventDetails() {
       <p className="mt-4 text-gray-700 leading-relaxed">{singleData.description}</p>
 
       <div className="mt-6">
-        <button className="px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
+        <Link to="/create-event" className="px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
           Join Event
-        </button>
+        </Link>
       </div>
     </div>
   );
