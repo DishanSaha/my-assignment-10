@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker';
 import { useNavigate } from 'react-router';
@@ -7,6 +8,8 @@ export default function CreateEvent() {
 
   const navigate = useNavigate()
 
+
+  // controlled state----
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
@@ -14,9 +17,17 @@ export default function CreateEvent() {
   const [location, setLocation] = useState("");
   const [date, setDate] = useState(new Date());
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // const title = e.target.user.title;
+    // const description = e.target.user.description;
+    // const type = e.target.user.type;
+    // const image = e.target.user.image;
+    // const location = e.target.user.location;
+    // const date = e.target.user.date;
+
+    // validation---
     if (!title || !description || !type || !image || !location || !date) {
       Swal.fire({
         icon: "warning",
@@ -25,7 +36,6 @@ export default function CreateEvent() {
       });
       return;
     }
-
     if (date < new Date()) {
       Swal.fire({
         icon: "error",
@@ -35,18 +45,30 @@ export default function CreateEvent() {
       return;
     }
 
+    const eventData = { title, description, type, image, location, date };
 
-    Swal.fire({
-      icon: "success",
-      title: "Event Created!",
-      text: "Redirecting to Upcoming Events...",
-      timer: 2000,
-      showConfirmButton: false,
-    });
-    setTimeout(() => navigate("/upcoming-events"), 2000);
+    try {
+      const res = await axios.post('http://localhost:3000/create-event', eventData);
+      console.log('event created successfully', res.data)
+      Swal.fire({
+        icon: "success",
+        title: "Event Created!",
+        text: "Redirecting to Upcoming Events...",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+      setTimeout(() => navigate("/upcoming-events"), 2000);
+    }
+
+    catch (error) {
+      console.error("Error creating event:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Failed",
+        text: "Could not create the event. Please try again.",
+      });
+    }
   };
-
-
 
 
   return (

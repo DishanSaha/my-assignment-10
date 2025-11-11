@@ -35,9 +35,9 @@ const router = createBrowserRouter([
       {
         path: "/create-event",
         element:
-
-          <CreateEvent />
-
+          <PrivateRoute>
+            <CreateEvent />
+          </PrivateRoute>
       },
 
       {

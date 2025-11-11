@@ -26,9 +26,11 @@ export default function Navbar() {
     const links = <>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
-        {
+        {/* {
+            user &&
+            <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/create-event'>CreateEvent</NavLink></li>
 
-        }
+        } */}
     </>
 
     return (
@@ -83,7 +85,7 @@ export default function Navbar() {
                     <img src="https://i.ibb.co.com/TF7Qx7N/userss.png" className="size-8 rounded-full" alt="" />
                 </div>
                 <div>
-                    {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Log Out</Link>
+                    {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-[10px] lg:text-[14px] text-white font-medium">Log Out</Link>
                         : <Link to='/auth/login' className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
                     }
                 </div>
