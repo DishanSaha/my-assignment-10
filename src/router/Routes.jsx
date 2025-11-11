@@ -24,19 +24,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/upcoming-events",
-        loader: () => fetch("/public/dummyEvents.json"),
+        loader: () => fetch("http://localhost:3000/upcoming-events"),
         element: <UpEvents />,
       },
       {
-        path: "/events/:id",
-        loader: () => fetch("/public/dummyEvents.json"),
+        path: "/upcoming-events/:id",
+        loader: ({ params }) => fetch(`http://localhost:3000/upcoming-events/${params.id}`),
         element: <EventDetails />
       },
       {
         path: "/create-event",
         element:
 
-            <CreateEvent />
+          <CreateEvent />
 
       },
 

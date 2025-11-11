@@ -1,23 +1,29 @@
-import { useState } from "react";
-import { FcGoogle } from "react-icons/fc"; // npm install react-icons
+import { useContext } from "react";
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const LoginForm = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleLogin = (e) => {
+    const { signInGoogle } = useContext(AuthContext)
+
+    const handleGoogleSignIn = (e) => {
         e.preventDefault();
-        console.log("Email:", email);
-        console.log("Password:", password);
-        // TODO: Add backend or Firebase authentication here
-    };
 
-    // Dummy Google Sign-In Handler
-    const handleGoogleSignIn = () => {
-        console.log("Google Sign-In Clicked");
-        // TODO: Replace with Firebase signInWithPopup(googleProvider)
-    };
+        signInGoogle()
+            .then(result => {
+                const newUser = {
+                    name: result.user.displayName,
+                    email: result.user.enail,
+                    image: result.user.photoURL
+                }
+
+// create user in the database-----
+fetch()
+
+            })
+
+    }
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
@@ -26,7 +32,7 @@ const LoginForm = () => {
                     Login to Your Account
                 </h2>
 
-                <form onSubmit={handleLogin} className="space-y-4">
+                <form className="space-y-4">
                     {/* Email Field */}
                     <div>
                         <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -34,8 +40,6 @@ const LoginForm = () => {
                         </label>
                         <input
                             type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com"
                             required
                             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -49,8 +53,6 @@ const LoginForm = () => {
                         </label>
                         <input
                             type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
                             placeholder="••••••••"
                             required
                             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"

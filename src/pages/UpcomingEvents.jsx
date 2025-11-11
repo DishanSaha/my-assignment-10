@@ -27,7 +27,7 @@ export default function UpcomingEvents({ event }) {
               Date: {format(new Date(event.date), "PPP")}
             </p>
           </div>
-          <Link className="mt-6 w-full font-medium bg-[#0fa47d] text-white py-2.5 rounded-lg hover:bg-green-700 transition-all duration-300 text-center" to={`/events/${event.id}`}>View Event</Link>
+          <Link className="mt-6 w-full font-medium bg-[#0fa47d] text-white py-2.5 rounded-lg hover:bg-green-700 transition-all duration-300 text-center" to={`/upcoming-events/${event._id}`}>View Event</Link>
         </div>
       </div>
     </div>
