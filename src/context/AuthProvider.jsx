@@ -1,12 +1,12 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../firebase.config'
 import { AuthContext } from './AuthContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const googleProvider = new GoogleAuthProvider();
 
 export default function AuthProvider({ children }) {
-
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     // Google signIn---
@@ -20,10 +20,19 @@ export default function AuthProvider({ children }) {
         return signOut(auth)
     }
 
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currenUser) => {
+            setUser(currenUser)
+            setLoading(false)
+        });
+        return () => unSubscribe();
+    })
+
     const authInfo = {
         signInGoogle,
         signOutGoogle,
-        loading
+        loading,
+        user
     }
 
     return (
@@ -34,3 +43,5 @@ export default function AuthProvider({ children }) {
         </div>
     )
 }
+
+

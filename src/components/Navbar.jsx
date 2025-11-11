@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, NavLink } from "react-router"
+import { AuthContext } from "../context/AuthContext";
 
 export default function Navbar() {
+
+    const { user, signOutGoogle } = useContext(AuthContext);
 
     const [theme, setTheme] = useState('light')
     useEffect(() => {
@@ -10,6 +13,13 @@ export default function Navbar() {
 
     const handleToggle = (e) => {
         setTheme(e.target.checked ? "dark" : "light")
+    }
+
+    // google signOut----
+    const handleLogOut = () => {
+        signOutGoogle()
+            .then()
+            .catch()
     }
 
 
@@ -73,7 +83,9 @@ export default function Navbar() {
                     <img src="https://i.ibb.co.com/TF7Qx7N/userss.png" className="size-8 rounded-full" alt="" />
                 </div>
                 <div>
-                    <Link to="/auth/login" className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
+                    {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Log Out</Link>
+                        : <Link to='/auth/login' className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
+                    }
                 </div>
             </div>
         </div>
