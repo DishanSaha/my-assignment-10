@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import DatePicker from 'react-datepicker';
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../context/AuthContext';
 
 export default function CreateEvent() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
 
   // controlled state----
@@ -39,7 +41,7 @@ export default function CreateEvent() {
       return;
     }
 
-    const eventData = { title, description, type, image, location, date };
+    const eventData = { title, description, type, image, location, date, email: user?.email };
 
     try {
       const res = await axios.post('http://localhost:3000/create-event', eventData);

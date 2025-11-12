@@ -42,11 +42,9 @@ export default function EventDetails() {
 
       <p className="mt-4 text-gray-700 leading-relaxed">{event.description}</p>
 
-      <div className="mt-6">
-        <Link to="/create-event" className="px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
-          Join Event
-        </Link>
-      </div>
+      <button className="mt-6 px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
+        Join Event
+      </button>
     </div>
   );
 }

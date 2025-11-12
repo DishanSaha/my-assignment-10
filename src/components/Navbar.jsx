@@ -34,8 +34,12 @@ export default function Navbar() {
         <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
         {
             user &&
-            <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
+            <>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/create-event'>CreateEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/manage-events'>ManageEvents</NavLink></li>
 
+            </>
         }
     </>
 
