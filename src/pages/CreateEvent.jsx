@@ -15,17 +15,11 @@ export default function CreateEvent() {
   const [type, setType] = useState("");
   const [image, setImage] = useState("");
   const [location, setLocation] = useState("");
+  // const [email, setEmail] = useState("");
   const [date, setDate] = useState(new Date());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // const title = e.target.user.title;
-    // const description = e.target.user.description;
-    // const type = e.target.user.type;
-    // const image = e.target.user.image;
-    // const location = e.target.user.location;
-    // const date = e.target.user.date;
 
     // validation---
     if (!title || !description || !type || !image || !location || !date) {
@@ -36,7 +30,7 @@ export default function CreateEvent() {
       });
       return;
     }
-    if (date < new Date()) {
+    if (date < new Date().toLocaleDateString()) {
       Swal.fire({
         icon: "error",
         title: "Invalid Date",
@@ -83,6 +77,14 @@ export default function CreateEvent() {
           onChange={(e) => setTitle(e.target.value)}
           className="w-full border p-2 rounded mb-3"
         />
+
+        {/* <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full border p-2 rounded mb-3"
+        /> */}
 
         <textarea
           placeholder="Event Description"

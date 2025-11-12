@@ -4,7 +4,7 @@ import { HiOutlineLocationMarker, HiOutlinePhone } from "react-icons/hi";
 
 function Footer() {
   return (
-    <footer className="h-full text-black">
+    <footer className="h-full w-full text-black">
       <div className="bg-[#d5faec] text-gray-800 border-b border-[#0aab6d] py-10 px-4 sm:px-6 lg:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* VISIT Section */}

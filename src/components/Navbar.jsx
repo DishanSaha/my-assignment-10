@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Link, NavLink } from "react-router"
 import { AuthContext } from "../context/AuthContext";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Navbar() {
 
@@ -18,19 +19,24 @@ export default function Navbar() {
     // google signOut----
     const handleLogOut = () => {
         signOutGoogle()
-            .then()
-            .catch()
+            .then(() => {
+                toast.success('You are logged out successfully');
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error("Something went wrong during logout!")
+            })
     }
 
 
     const links = <>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
-        {/* {
+        {
             user &&
-            <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/create-event'>CreateEvent</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
 
-        } */}
+        }
     </>
 
     return (
@@ -82,13 +88,14 @@ export default function Navbar() {
                     </label>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co.com/TF7Qx7N/userss.png" className="size-8 rounded-full" alt="" />
+                    <img src={user?.photoURL || "https://i.ibb.co.com/TF7Qx7N/userss.png"} className="size-8 rounded-full" alt="" />
                 </div>
                 <div>
                     {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-[10px] lg:text-[14px] text-white font-medium">Log Out</Link>
                         : <Link to='/auth/login' className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
                     }
                 </div>
+                <Toaster />
             </div>
         </div>
 
