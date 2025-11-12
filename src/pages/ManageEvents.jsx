@@ -101,59 +101,64 @@ export default function ManageEvents() {
       <h2 className="lg:text-4xl text-2xl text-center font-semibold mb-6 text-green-900">
         Your Joined Events
       </h2>
-
-      <motion.ul
-        className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-5 gap-3 lg:w-[1350px] w-full mx-auto"
-      >
-        {events.map((event, index) => (
-          <motion.li
-            key={event._id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="lg:w-80 h-full sm:w-55 w-43 py-3 space-y-4  bg-gray-100 rounded-md shadow-md"
-          >
-            <div className="relative flex justify-center items-center">
-              <img
-                src={event.image}
-                alt=""
-                className="lg:w-[90%] sm:h-35 w-[90%] lg:h-50 h-25 object-cover rounded-lg"
-              />
-
-              {/* Date Badge */}
-              <div className="absolute top-2 lg:left-5 left-3 bg-white text-[#0fa47d] lg:px-3 lg:py-1 p-1 rounded-md lg:text-sm text-[10px] font-medium shadow-md">
-                {new Date(event.date).toLocaleString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                })}
-              </div>
-            </div>
-            <div className="px-3 space-y-1">
-              <p className="lg:text-sm lg:text-[12px] text-[9px] text-white badge badge-success">{event.type}</p>
-              <h3 className="font-bold sm:text-lg lg:text-2xl pl-1">{event.title}</h3>
-              <p className="text-gray-600 lg:text-[12px] text-[10px] pl-1 break-words">
-                <span className='text-black'> Description :</span> {event.description}
-              </p>
-              <p className="lg:text-sm text-[12px] flex items-center gap-1"><MapPin /> {event.location}</p>
-            </div>
-            <div className="flex gap-2 mt-3">
-              <button
-                onClick={() => handleUpdate(event._id)}
-                className="btn btn-sm btn-warning text-white"
+      {events.length === 0 ?
+        (< p className="text-center my-20 text-gray-500 text-8xl mx-20">
+          No events available.
+        </p>) :
+        (
+          <motion.ul
+            className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-5 gap-3 lg:w-[1350px] w-full mx-auto">
+            {events.map((event, index) => (
+              <motion.li
+                key={event._id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="lg:w-80 h-full sm:w-55 w-43 py-3 space-y-4  bg-gray-100 rounded-md shadow-md"
               >
-                Update
-              </button>
-              <button
-                onClick={() => handleDelete(event._id)}
-                className="btn btn-sm btn-error text-white"
-              >
-                Delete
-              </button>
-            </div>
-          </motion.li>
-        ))}
-      </motion.ul>
-    </motion.div>
+                <div className="relative flex justify-center items-center">
+                  <img
+                    src={event.image}
+                    alt=""
+                    className="lg:w-[90%] sm:h-35 w-[90%] lg:h-50 h-25 object-cover rounded-lg"
+                  />
+
+                  {/* Date Badge */}
+                  <div className="absolute top-2 lg:left-5 left-3 bg-white text-[#0fa47d] lg:px-3 lg:py-1 p-1 rounded-md lg:text-sm text-[10px] font-medium shadow-md">
+                    {new Date(event.date).toLocaleString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </div>
+                </div>
+                <div className="px-3 space-y-1">
+                  <p className="lg:text-sm lg:text-[12px] text-[9px] text-white badge badge-success">{event.type}</p>
+                  <h3 className="font-bold sm:text-lg lg:text-2xl pl-1">{event.title}</h3>
+                  <p className="text-gray-600 lg:text-[12px] text-[10px] pl-1 break-words">
+                    <span className='text-black'> Description :</span> {event.description}
+                  </p>
+                  <p className="lg:text-sm text-[12px] flex items-center gap-1"><MapPin /> {event.location}</p>
+                </div>
+                <div className="flex gap-2 mt-3">
+                  <button
+                    onClick={() => handleUpdate(event._id)}
+                    className="btn btn-sm btn-warning text-white"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onClick={() => handleDelete(event._id)}
+                    className="btn btn-sm btn-error text-white"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </motion.li>
+            ))}
+          </motion.ul>
+        )
+      }
+    </motion.div >
   )
 }

@@ -1,20 +1,21 @@
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import { format } from "date-fns";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { AuthContext } from "../context/AuthContext";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 
 export default function EventDetails() {
 
   const event = useLoaderData();
-
-
-
-
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const containerRef = useRef(null);
 
+  // Animation----
   useEffect(() => {
-
     gsap.fromTo(
       containerRef.current,
       { opacity: 0, y: -50 },
@@ -22,7 +23,41 @@ export default function EventDetails() {
     );
   }, []);
 
+  const handleJoin = async () => {
+    if (!user) {
+      Swal.fire({
+        icon: "warning",
+        title: "Please log in first to join the event!",
+      });
+      return;
+    }
 
+
+    const joinedEvent = {
+      ...event,
+      email: user.email,
+      joinedAt: new Date(),
+    };
+
+
+    try {
+      await axios.post("http://localhost:3000/joined-events", joinedEvent);
+      Swal.fire({
+        icon: "success",
+        title: "You've successfully joined this event!",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+      navigate("/joined-events");
+    } catch (error) {
+      console.error("Error joining event:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong!",
+        text: "Unable to join the event. Please try again later.",
+      });
+    }
+  }
 
 
   return (
@@ -41,10 +76,11 @@ export default function EventDetails() {
       </p>
 
       <p className="mt-4 text-gray-700 leading-relaxed">{event.description}</p>
-
-      <button className="mt-6 px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
-        Join Event
-      </button>
-    </div>
+      <Link to='/joined-events'>
+        <button onClick={handleJoin} className="mt-6 px-6 py-2 w-full font-medium bg-[#0fa47d] text-white rounded hover:bg-green-700">
+          Join Event
+        </button >
+      </Link>
+    </div >
   );
 }
