@@ -72,6 +72,24 @@ export default function ManageEvents() {
     }
   };
 
+  // Delete Event-----
+  const handleDelete = async (id) => {
+    const confirm = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+    });
+    if (confirm.isConfirmed) {
+      await axios.delete(`http://localhost:3000/create-event/${id}?email=${user.email}`);
+      Swal.fire("Deleted!", "Your event has been deleted.", "success");
+      setEvents(events.filter(e => e._id !== id));
+    }
+  }
+
+
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -127,7 +145,7 @@ export default function ManageEvents() {
                 Update
               </button>
               <button
-                // onClick={() => handleDelete(event._id)}
+                onClick={() => handleDelete(event._id)}
                 className="btn btn-sm btn-error text-white"
               >
                 Delete
