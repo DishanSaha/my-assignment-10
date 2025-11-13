@@ -64,7 +64,7 @@ export default function Register() {
           name, email, photo, createdAt: new Date()
         }
         // save to mongoDB backend---
-        return axios.post("http://localhost:3000/users", userData);
+        return axios.post("https://my-assignment-10-sebajatra.vercel.app/users", userData);
       })
       .then(() => {
         toast.success(" Registered successfully!");

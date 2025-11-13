@@ -47,7 +47,7 @@ export default function EventDetails() {
 
 
     try {
-      await axios.post("http://localhost:3000/joined-events", joinedEvent);
+      await axios.post("https://my-assignment-10-sebajatra.vercel.app/joined-events", joinedEvent);
       Swal.fire({
         icon: "success",
         title: "You've successfully joined this event!",

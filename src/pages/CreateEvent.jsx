@@ -44,7 +44,7 @@ export default function CreateEvent() {
     const eventData = { title, description, type, image, location, date, email: user?.email };
 
     try {
-      const res = await axios.post('http://localhost:3000/create-event', eventData);
+      const res = await axios.post('https://my-assignment-10-sebajatra.vercel.app/create-event', eventData);
       console.log('event created successfully', res.data)
       Swal.fire({
         icon: "success",

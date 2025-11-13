@@ -12,7 +12,7 @@ export default function ManageEvents() {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:3000/create-event?email=${user.email}`)
+      axios.get(`https://my-assignment-10-sebajatra.vercel.app/create-event?email=${user.email}`)
         .then(res => {
           setEvents(res.data)
         })
@@ -64,7 +64,7 @@ export default function ManageEvents() {
         email: user.email
       };
 
-      await axios.put(`http://localhost:3000/create-event/${id}`, evenData);
+      await axios.put(`https://my-assignment-10-sebajatra.vercel.app/create-event/${id}`, evenData);
 
       Swal.fire("Updated!", "Your event has been updated.", "success");
 
@@ -83,7 +83,7 @@ export default function ManageEvents() {
       confirmButtonText: "Yes, delete it!",
     });
     if (confirm.isConfirmed) {
-      await axios.delete(`http://localhost:3000/create-event/${id}?email=${user.email}`);
+      await axios.delete(`https://my-assignment-10-sebajatra.vercel.app/create-event/${id}?email=${user.email}`);
       Swal.fire("Deleted!", "Your event has been deleted.", "success");
       setEvents(events.filter(e => e._id !== id));
     }

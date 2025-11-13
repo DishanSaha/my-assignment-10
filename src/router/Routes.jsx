@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/upcoming-events",
-        loader: () => fetch("http://localhost:3000/upcoming-events"),
+        loader: () => fetch("https://my-assignment-10-sebajatra.vercel.app/upcoming-events"),
         element: <UpEvents />,
       },
       {
         path: "/upcoming-events/:id",
-        loader: ({ params }) => fetch(`http://localhost:3000/upcoming-events/${params.id}`),
+        loader: ({ params }) => fetch(`https://my-assignment-10-sebajatra.vercel.app/upcoming-events/${params.id}`),
         element: <EventDetails />
       },
       {

@@ -49,7 +49,7 @@ const LoginForm = () => {
                 }
 
                 // create user in the database-----
-                fetch('http://localhost:3000/users', {
+                fetch('https://my-assignment-10-sebajatra.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
