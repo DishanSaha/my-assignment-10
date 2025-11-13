@@ -4,6 +4,7 @@ import { MapPin } from 'lucide-react';
 import axios from 'axios';
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
+import ReactiveButton from 'reactive-button';
 
 export default function ManageEvents() {
   const { user, loading } = useContext(AuthContext);
@@ -140,19 +141,11 @@ export default function ManageEvents() {
                   </p>
                   <p className="lg:text-sm text-[12px] flex items-center gap-1"><MapPin /> {event.location}</p>
                 </div>
-                <div className="flex gap-2 mt-3">
-                  <button
-                    onClick={() => handleUpdate(event._id)}
-                    className="btn btn-sm btn-warning text-white"
-                  >
-                    Update
-                  </button>
-                  <button
-                    onClick={() => handleDelete(event._id)}
-                    className="btn btn-sm btn-error text-white"
-                  >
-                    Delete
-                  </button>
+                <div className="flex justify-between mx-3 gap-2 mt-3">
+
+                  <ReactiveButton onClick={() => handleUpdate(event._id)} color="teal" idleText="Update" />
+
+                  <ReactiveButton onClick={() => handleDelete(event._id)} color="red" idleText="Delate" />
                 </div>
               </motion.li>
             ))}

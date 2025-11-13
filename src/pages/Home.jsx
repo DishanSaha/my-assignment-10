@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Calendar, MapPin, Mail } from "lucide-react";
-
+import ReactiveButton from "reactive-button";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center">
                 <p className="text-white text-[18px] font-medium mb-2">Education and Schoolership programme</p>
-                <button className="bg-[#0fa47d] text-white px-4 py-2 rounded hover:bg-[#32ffb4] transition-colors">Donate</button>
+                <ReactiveButton color="teal" idleText="Donate" />
               </div>
             </div>
 
@@ -35,7 +35,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center">
                 <p className="text-white text-[18px]font-medium mb-2">Sponsor an orphan - Make their dreams come true</p>
-                <button className="bg-[#0fa47d] text-white px-4 py-2 rounded hover:bg-[#32ffb4] transition-colors">Donate</button>
+                <ReactiveButton color="teal" idleText="Donate" />
               </div>
             </div>
 
@@ -48,7 +48,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center">
                 <p className="text-white text-[18px] font-medium mb-2">Dry Food Family Package</p>
-                <button className="bg-[#0fa47d] text-white px-4 py-2 rounded hover:bg-[#32ffb4] transition-colors">Donate</button>
+                <ReactiveButton color="teal" idleText="Donate" />
               </div>
             </div>
 
@@ -61,7 +61,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center">
                 <p className="text-white text-[18px] font-medium mb-2">Ten taka meal</p>
-                <button className="bg-[#0fa47d] text-white px-4 py-2 rounded hover:bg-[#32ffb4] transition-colors">Donate</button>
+                <ReactiveButton color="teal" idleText="Donate" />
               </div>
             </div>
 
@@ -74,7 +74,8 @@ export default function Home() {
           >
             <h1 className="text-3xl text-green-900 sm:text-5xl font-bold mb-4">Team Sebajatra</h1>
             <p className="mb-6 text-black text-sm font-light sm:text-lg">A mad passionate group of people working to inspire one nation at a time Sebajatra (Learn for Fun) is an educational voluntary organization originating from Bangladesh.</p>
-            <button className="bg-[#0fa47d] text-white px-4 py-2 rounded  hover:bg-[#0cbf7d] transition-colors">Explore Projects</button>
+            <ReactiveButton color="teal" size="large" idleText=" Explore Projects" />
+
           </motion.div>
         </section>
 
@@ -107,7 +108,7 @@ export default function Home() {
               <motion.div
                 key={idx}
                 className="bg-white rounded-xl shadow-lg p-6 text-center flex flex-col items-center gap-4 hover:bg-[#d0ffee]"
-               
+
               >
                 <div className="text-[#0fa47d]">{feature.icon}</div>
                 <h3 className="font-semibold text-lg">{feature.title}</h3>

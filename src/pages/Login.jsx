@@ -1,12 +1,41 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
+import { Eye, EyeOff } from "lucide-react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 const LoginForm = () => {
 
-    const { signInGoogle } = useContext(AuthContext)
+    const { signInGoogle, setUser } = useContext(AuthContext)
+    const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await signInWithEmailAndPassword(auth, email, password);
+            setUser(res.user);
+            Swal.fire({
+                icon: "success",
+                title: "Login successful",
+                timer: 1500,
+                showConfirmButton: false,
+            });
+            navigate("/");
+        } catch (err) {
+            Swal.fire({
+                icon: "error",
+                title: "Login failed",
+                text: err.message,
+            });
+        }
+    };
     const handleGoogleSignIn = () => {
 
         signInGoogle()
@@ -47,7 +76,7 @@ const LoginForm = () => {
                     Login to Your Account
                 </h2>
 
-                <form className="space-y-4">
+                <form onSubmit={handleLogin} className="space-y-4">
                     {/* Email Field */}
                     <div>
                         <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -55,6 +84,8 @@ const LoginForm = () => {
                         </label>
                         <input
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com"
                             required
                             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -62,16 +93,25 @@ const LoginForm = () => {
                     </div>
 
                     {/* Password Field */}
-                    <div>
+                    <div className="relative">
                         <label className="block text-sm font-medium text-gray-600 mb-1">
                             Password
                         </label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required
                             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-3 top-[36px] text-gray-600"
+                        >
+                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                        </button>
                     </div>
 
                     {/* Login Button */}

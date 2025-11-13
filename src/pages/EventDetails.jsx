@@ -34,7 +34,13 @@ export default function EventDetails() {
 
 
     const joinedEvent = {
-      ...event,
+      // ...event,
+      // email: user.email,
+      // joinedAt: new Date(),
+      eventId: event._id,   // reference the event
+      title: event.title,
+      type: event.type,
+      date: event.date,
       email: user.email,
       joinedAt: new Date(),
     };

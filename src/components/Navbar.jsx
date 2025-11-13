@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router"
 import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 
+
 export default function Navbar() {
 
     const { user, signOutGoogle } = useContext(AuthContext);
@@ -30,14 +31,14 @@ export default function Navbar() {
 
 
     const links = <>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium border-b-4" : "text-gray-600"} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium border-b-4" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
         {
             user &&
             <>
-                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
-                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/create-event'>CreateEvents</NavLink></li>
-                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/manage-events'>ManageEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium border-b-4" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium border-b-4" : "text-gray-600"} to='/create-event'>CreateEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium border-b-4" : "text-gray-600"} to='/manage-events'>ManageEvents</NavLink></li>
 
             </>
         }
@@ -95,7 +96,8 @@ export default function Navbar() {
                     <img src={user?.photoURL || "https://i.ibb.co.com/TF7Qx7N/userss.png"} className="size-8 rounded-full" alt="" />
                 </div>
                 <div>
-                    {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-[10px] lg:text-[14px] text-white font-medium">Log Out</Link>
+                    {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-[10px] lg:text-[14px] text-white font-medium">
+                        Log Out</Link>
                         : <Link to='/auth/login' className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-white font-medium">Login</Link>
                     }
                 </div>
