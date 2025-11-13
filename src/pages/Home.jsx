@@ -5,8 +5,10 @@ import ReactiveButton from "reactive-button";
 export default function Home() {
   return (
     <div>
-      <div className="flex flex-col gap-20 mt-15">
-        <section className="relative bg-[#93f8d3] text-white lg:h-full h-[1350px] flex lg:flex-row flex-col items-center justify-center">
+      <div className="flex flex-col gap-20 mt-15" >
+        <section className="relative bg-[linear-gradient(270deg,rgba(147,248,211,0.5),rgba(15,164,125,0.6),rgba(147,248,211,0.5))]
+            bg-200
+            animate-gradient-x text-white lg:h-full h-[1350px] flex lg:flex-row flex-col items-center justify-center">
           <motion.div initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -72,8 +74,10 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="text-center px-4 lg:w-1/2"
           >
-            <h1 className="text-3xl text-green-900 sm:text-5xl font-bold mb-4">Team Sebajatra</h1>
-            <p className="mb-6 text-black text-sm font-light sm:text-lg">A mad passionate group of people working to inspire one nation at a time Sebajatra (Learn for Fun) is an educational voluntary organization originating from Bangladesh.</p>
+            <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,0.5)]">
+              Team Sebajatra
+            </h1>
+            <p className="mb-6 text-black/70 text-sm font-light sm:text-lg">A mad passionate group of people working to inspire one nation at a time Sebajatra (Learn for Fun) is an educational voluntary organization originating from Bangladesh.</p>
             <ReactiveButton color="teal" size="large" idleText=" Explore Projects" />
 
           </motion.div>
@@ -81,7 +85,7 @@ export default function Home() {
 
         {/* ================= Feature Section ================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-10 text-green-900">What We Do</h2>
+          <h2 className="text-4xl font-bold text-center mb-10 text-teal-700">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
@@ -120,7 +124,7 @@ export default function Home() {
 
         {/* ================= Gallery Section ================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-10  text-green-900">Event Gallery</h2>
+          <h2 className="text-4xl font-bold text-center mb-10  text-teal-700">Event Gallery</h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <motion.img
@@ -190,7 +194,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl font-bold text-green-900 mb-6"
+              className="text-3xl sm:text-4xl font-bold text-teal-700 mb-6"
             >
               OUR MISSION
             </motion.h2>
@@ -277,8 +281,8 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="max-w-xl w-full text-center"
           >
-            <h2 className="text-2xl font-bold mb-4">Subscribe to our Newsletter</h2>
-            <p className="mb-6 text-sm text-gray-700">Get updates about upcoming events and initiatives directly to your inbox.</p>
+            <h2 className="text-2xl text-teal-700 font-bold mb-4">Subscribe to our Newsletter</h2>
+            <p className="mb-6 text-sm text-gray-600">Get updates about upcoming events and initiatives directly to your inbox.</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"

@@ -72,7 +72,7 @@ export default function Register() {
       })
       .catch((e) => {
         console.log(e);
-        toast.error("Failed to save user in database!")
+        toast.error("User already exists!");
       })
       .catch(error => {
         const errorMessage = error.message;

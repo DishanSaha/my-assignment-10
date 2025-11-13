@@ -43,6 +43,19 @@ export default function Navbar() {
             </>
         }
     </>
+    const link = <>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/upcoming-events'>UpcomingEvents</NavLink></li>
+        {
+            user &&
+            <>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/joined-events'>JoinedEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/create-event'>CreateEvents</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-[#0fa47d] font-medium" : "text-gray-600"} to='/manage-events'>ManageEvents</NavLink></li>
+
+            </>
+        }
+    </>
 
     return (
 
@@ -50,15 +63,15 @@ export default function Navbar() {
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 30 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm  dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {links}
+                        {link}
                     </ul>
                 </div>
-                <a className=" lg:text-2xl text-lg font-bold text-green-900">Sebajatra</a>
+                <a className=" lg:text-3xl text-[20px] font-bold text-[#0fa47d]/50"><span className="text-[#0fa47d]">Seba</span>jatra</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -93,7 +106,7 @@ export default function Navbar() {
                     </label>
                 </div>
                 <div>
-                    <img src={user?.photoURL || "https://i.ibb.co.com/TF7Qx7N/userss.png"} className="size-8 rounded-full" alt="" />
+                    <img src={user?.photoURL || "https://i.ibb.co.com/TF7Qx7N/userss.png"} className="lg:size-8 size-6 rounded-full" alt="" />
                 </div>
                 <div>
                     {user ? <Link onClick={handleLogOut} className="btn bg-linear-to-r from-[#0fa47d] to-[#32ffb4] text-[10px] lg:text-[14px] text-white font-medium">

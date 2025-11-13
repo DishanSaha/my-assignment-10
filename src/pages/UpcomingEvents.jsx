@@ -1,17 +1,8 @@
 import { format } from 'date-fns';
-// import { useContext } from 'react';
 import { Link } from 'react-router';
-import { AuthContext } from '../context/AuthContext';
 
 export default function UpcomingEvents({ event }) {
-  // const { loading } = useContext(AuthContext)
-  // if (loading) {
-  //   return (
-  //     <div className="flex justify-center items-center min-h-screen">
-  //       <span className="loading loading-spinner text-success w-15 lg:w-30"></span>
-  //     </div>
-  //   );
-  // }
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center mb-8 lg:h-[500px] w-full lg:w-[350px] hover:bg-[#dffcf4]  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">

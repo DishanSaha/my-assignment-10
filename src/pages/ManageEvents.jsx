@@ -99,7 +99,7 @@ export default function ManageEvents() {
       viewport={{ once: true }}
       className="lg:max-w-[1400px] mx-auto lg:my-20 my-20 lg:p-6 p-3"
     >
-      <h2 className="lg:text-4xl text-2xl text-center font-semibold mb-6 text-green-900">
+      <h2 className="lg:text-4xl text-2xl text-center font-semibold mb-6 text-teal-700">
         Your Joined Events
       </h2>
       {events.length === 0 ?
@@ -116,7 +116,7 @@ export default function ManageEvents() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="lg:w-80 h-full sm:w-55 w-43 py-3 space-y-4  bg-gray-100 rounded-md shadow-md"
+                className="lg:w-80 sm:w-55 w-43 py-3 space-y-4  bg-gray-100 rounded-md shadow-md"
               >
                 <div className="relative flex justify-center items-center">
                   <img
@@ -141,11 +141,20 @@ export default function ManageEvents() {
                   </p>
                   <p className="lg:text-sm text-[12px] flex items-center gap-1"><MapPin /> {event.location}</p>
                 </div>
-                <div className="flex justify-between mx-3 gap-2 mt-3">
+                <div className="flex flex-col justify-between px-3 sm:flex-row gap-2 sm:gap-4">
+                  <ReactiveButton
+                    onClick={() => handleUpdate(event._id)}
+                    color="teal"
+                    idleText="Update"
+                    className="w-full sm:w-auto"
+                  />
 
-                  <ReactiveButton onClick={() => handleUpdate(event._id)} color="teal" idleText="Update" />
-
-                  <ReactiveButton onClick={() => handleDelete(event._id)} color="red" idleText="Delate" />
+                  <ReactiveButton
+                    onClick={() => handleDelete(event._id)}
+                    color="red"
+                    idleText="Delete"
+                    className="w-full sm:w-auto"
+                  />
                 </div>
               </motion.li>
             ))}

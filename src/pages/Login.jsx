@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { Eye, EyeOff } from "lucide-react";
-import axios from "axios";
+// import axios from "axios";
 import Swal from "sweetalert2";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
 
@@ -15,6 +16,7 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const emailRef = useRef(null);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -47,7 +49,7 @@ const LoginForm = () => {
                 }
 
                 // create user in the database-----
-                fetch('http://localhost:3000/user', {
+                fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -63,10 +65,16 @@ const LoginForm = () => {
             .catch(error => {
                 console.log(error)
             })
+    }
 
 
-
-
+    const handleForgotPass = () => {
+        const email = emailRef.current?.value;
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast('Please check your email')
+            })
+            .catch()
     }
 
     return (
@@ -85,6 +93,7 @@ const LoginForm = () => {
                         <input
                             type="email"
                             value={email}
+                            ref={emailRef}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com"
                             required
@@ -113,7 +122,6 @@ const LoginForm = () => {
                             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                         </button>
                     </div>
-
                     {/* Login Button */}
                     <button
                         type="submit"
@@ -141,9 +149,13 @@ const LoginForm = () => {
 
                     {/* Links */}
                     <div className="flex justify-between text-sm mt-3">
-                        <a href="#" className="text-blue-600 hover:underline">
-                            Forgot Password?
-                        </a>
+                        <div onClick={handleForgotPass}
+                            className="text-right text-sm"
+                        >
+                            <a href="#" className="text-blue-500 hover:underline lg:text-[12px] text-[9px] font-semibold">
+                                Forgot Password?
+                            </a>
+                        </div>
                         <Link to="/auth/register" className="text-blue-600 hover:underline">
                             Register
                         </Link>

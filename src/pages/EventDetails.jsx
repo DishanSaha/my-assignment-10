@@ -58,13 +58,13 @@ export default function EventDetails() {
     } catch (error) {
       console.error("Error joining event:", error);
       Swal.fire({
-        icon: "error",
-        title: "Something went wrong!",
-        text: "Unable to join the event. Please try again later.",
+        icon: "warning",
+        title: "You have already joined this event!",
+        text: "You cannot join the same event twice.",
+        confirmButtonColor: "#0fa47d",
       });
     }
   }
-
 
   return (
     <div ref={containerRef} className="max-w-4xl mt-20 mb-8 shadow-lg mx-auto bg-base-200 py-10 px-6 sm:px-4">
@@ -74,7 +74,7 @@ export default function EventDetails() {
         className="w-full h-full object-cover rounded-lg mb-6"
       />
 
-      <h2 className="text-3xl text-green-900 font-bold mb-2">{event.title}</h2>
+      <h2 className="text-3xl text-teal-700 font-bold mb-2">{event.title}</h2>
       <p className="text-gray-600 mb-1">Location: {event.location}</p>
       <p className="text-gray-600 mb-1">Type: {event.type}</p>
       <p className="text-gray-600 mb-1">

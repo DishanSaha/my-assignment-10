@@ -34,24 +34,24 @@ export default function JoinedEvents() {
   }
 
   if (joinedEvents.length === 0) {
-    return <p className="text-center mt-20 text-gray-500">You haven’t joined any events yet.</p>;
+    return <p className="text-center lg:text-4xl lg:p-50 p-10 mt-20 text-gray-500">You haven't joined any events yet.</p>;
   }
 
   return (
     <div className="max-w-6xl mx-auto mt-20 px-4 py-10">
-      <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 text-green-900">
+      <h2 className="lg:text-4xl text-3xl font-bold text-center mb-8 text-teal-700">
         Joined Events
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {joinedEvents.map((event) => (
-          <div key={event._id} className="bg-base-200 shadow-md rounded-lg p-4">
+          <div key={event._id} className="bg-base-200 shadow-md space-y-2 rounded-lg p-4">
             <img
               src={event.image}
               alt={event.title}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
-            <h3 className="text-xl font-semibold">{event.title}</h3>
+            <h3 className="text-xl font-semibold text-teal-700">{event.title}</h3>
             <p className="text-gray-600 text-sm">Location: {event.location}</p>
             <p className="text-gray-600 text-sm">Type: {event.type}</p>
             <p className="text-gray-600 text-sm">

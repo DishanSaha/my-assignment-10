@@ -53,7 +53,7 @@ export default function CreateEvent() {
         timer: 2000,
         showConfirmButton: false,
       });
-      setTimeout(() => navigate("/upcoming-events"), 2000);
+      setTimeout(() => navigate("/manage-events"), 2000);
     }
 
     catch (error) {
@@ -70,7 +70,7 @@ export default function CreateEvent() {
   return (
     <div>
       <form onSubmit={handleSubmit} className="mt-20 max-w-xl mx-auto p-6 bg-base-200 rounded-lg shadow-md mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-green-900">Create New Event</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-teal-700">Create New Event</h2>
 
         <input
           type="text"
@@ -104,6 +104,10 @@ export default function CreateEvent() {
           <option value="Cleanup">Cleanup</option>
           <option value="Plantation">Plantation</option>
           <option value="Donation">Donation</option>
+          <option value="Donation">Social Visit</option>
+          <option value="Donation">Education</option>
+          <option value="Donation">Awareness</option>
+          <option value="Donation">Health</option>
         </select>
 
         <input
