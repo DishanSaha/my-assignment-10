@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../api/axios-instance';
 import React, { useContext, useState } from 'react'
 import DatePicker from 'react-datepicker';
 import { useNavigate } from 'react-router';

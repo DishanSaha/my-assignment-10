@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import { updateProfile } from 'firebase/auth';
-import axios from 'axios';
+import axios from '../api/axios-instance';
 import { Eye, EyeOff } from 'lucide-react';
 
 export default function Register() {
