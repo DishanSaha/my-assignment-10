@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { MapPin } from 'lucide-react';
-import axios from 'axios';
+import axios from '../api/axios-instance';
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
 import ReactiveButton from 'reactive-button';
