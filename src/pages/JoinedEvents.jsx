@@ -12,7 +12,7 @@ export default function JoinedEvents() {
 
     const fetchJoinedEvents = async () => {
       try {
-        const res = await axios.get(`https://my-assignment-10-sebajatra.vercel.app/joined-events?email=${user.email}`);
+        const res = await axios.get(`/joined-events?email=${user.email}`);
         setJoinedEvents(res.data);
       } catch (error) {
         console.error("Error fetching joined events:", error);

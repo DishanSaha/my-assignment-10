@@ -10,6 +10,7 @@ import ManageEvents from "../pages/ManageEvents";
 import PrivateRoute from "./PrivateRoute";
 import AuthLayout from "../layout/AuthLayout";
 import UpEvents from "../pages/UpEvents";
+import axios from "../api/axios-instance";
 
 
 const router = createBrowserRouter([
@@ -24,12 +25,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/upcoming-events",
-        loader: () => fetch("https://my-assignment-10-sebajatra.vercel.app/upcoming-events"),
+        // loader: () => fetch("https://my-assignment-10-sebajatra.vercel.app/upcoming-events"),
+        loader: () => axios.get("/upcoming-events"),
         element: <UpEvents />,
       },
       {
         path: "/upcoming-events/:id",
-        loader: ({ params }) => fetch(`https://my-assignment-10-sebajatra.vercel.app/upcoming-events/${params.id}`),
+        // loader: ({ params }) => fetch(`https://my-assignment-10-sebajatra.vercel.app/upcoming-events/${params.id}`),
+        loader: ({ params }) => axios.get(`/upcoming-events/${params.id}`),
         element: <EventDetails />
       },
       {

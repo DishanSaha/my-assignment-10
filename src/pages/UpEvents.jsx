@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router'
 import UpComingEvents from "../pages/UpcomingEvents";
 import { Suspense } from 'react';
 export default function UpEvents() {
-    const data = useLoaderData();
+    const data = useLoaderData()?.data;
     return (
         <>
             <h2 className="lg:text-3xl text-2xl text-teal-700 font-semibold mb-8 text-center mt-20">

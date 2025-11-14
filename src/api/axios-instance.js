@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://my-assignment-10-sebajatra.vercel.app';
+axios.defaults.baseURL = 'https://shebajatra-api.vercel.app/';
 
 axios.interceptors.request.use(
     (config) => {

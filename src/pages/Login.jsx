@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
 import toast from "react-hot-toast";
+import axios from "../api/axios-instance";
 
 const LoginForm = () => {
 
@@ -49,14 +50,7 @@ const LoginForm = () => {
                 }
 
                 // create user in the database-----
-                fetch('https://my-assignment-10-sebajatra.vercel.app/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(newUser)
-                })
-                    .then(res => res.json())
+                axios.post('/users', newUser)
                     .then(data => {
                         console.log('data after user save', data)
                     })
